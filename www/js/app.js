@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services'])
 
-    .run(function ($ionicPlatform) {
+    .run(function ($ionicPlatform, Product) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -19,6 +19,8 @@ angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services'])
                 StatusBar.styleDefault();
             }
         });
+
+        Product.init();
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
