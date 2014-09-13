@@ -28,7 +28,7 @@ angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services'])
             .state('monster', {
                 url: "/monster",
                 abstract: true,
-                templateUrl: "/templates/monster/monster.html"
+                templateUrl: "templates/monster/monster.html"
             })
 
             .state('monster.register', {
