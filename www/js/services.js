@@ -6,27 +6,35 @@ angular.module('starter.services', [])
  */
 .factory('ProductsFactory', function($q, $http) {
     var urlRoot = 'https://secure.techfortesco.com/groceryapi/restservice.aspx?';
+    var jcb = '&JSONP=JSON_CALLBACK';
     var promise = $q.defer();
 
-    function logFunction(a) {
-        console.log(a);
-        console.log("a");
-
-    }
-
     function getSessionkey() {
-        console.log("getting")
-        return $http.jsonp(urlRoot + 'command=LOGIN&JSONP=JSON_CALLBACK&email=&password=&developerkey=0ujRTU8FlFnyfad11Ium&applicationkey=417361BD075D0FCFD502')
-            .then(function(prod) {
-                return prod.data.SessionKey;
-            });
+        var sessionKey;
+
+        promise = $q.defer()
+        promise.resolve(sessionKey)
+
+        if (typeof sessionKey === 'undefined') {
+            return $http.jsonp(urlRoot + 'command=LOGIN' + jcb + '&email=&password=&developerkey=0ujRTU8FlFnyfad11Ium&applicationkey=417361BD075D0FCFD502')
+                .then(function(prod) {
+                    sessionKey = prod.data.SessionKey;
+                    return prod.data.SessionKey;
+                });
+        } else {
+            return promise.promise
+        }
     }
 
     function getProductData(barcode) {
-        getSessionkey().then(function(prod) {
-        $http.jsonp(urlRoot)        // http://www.techfortesco.com/groceryapi_b1/restservice.aspx?
-        // command=PRODUCTSEARCH&searchtext=chocolate&page=1&se
-
+        if (barcode === null) {
+            barcode = 1212;
+        }
+        getSessionkey().then(function(sessionKey) {
+            $http.jsonp(urlRoot + 'command=PRODUCTSEARCH&searchtext=' + barcode + jcb + '&sessionkey=' + sessionKey)
+            .then(function(a){
+              console.log(a);
+            });
         });
     }
 
@@ -38,10 +46,10 @@ angular.module('starter.services', [])
                 carb: 33,
                 protein: 34,
             }
-        }
-        getProductData()
-        promise.resolve(object)
-        return promise.promise
+        };
+        getProductData();
+        promise.resolve(object);
+        return promise.promise;
     }
     return {
         getProductByBarcode: getProductByBarcode
