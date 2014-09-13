@@ -22,7 +22,6 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
                 }
 
                 $scope.state = getState(product);
-
             }
 
             function showError(error) {
