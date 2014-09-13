@@ -18,13 +18,14 @@ angular.module('barcodeMonsters')
         }
     })
 
-    .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory', 'barcode',
-        function($scope, state, ProductsFactory, barcode) {
+    .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory', 'barcode', 'getState',
+        function($scope, state, ProductsFactory, barcode, getState) {
             var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
             var currentPos = 0;
             $scope.state = state.happy;
             $scope.barcode = 'UNKNOWN';
             ProductsFactory.init()
+
 
             $scope.sendBarcode = function(barcode) {
                 ProductsFactory.getProductData(barcode);

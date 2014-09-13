@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services'])
+angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services', 'barcodeMonsterService'])
 
     .run(function ($ionicPlatform, Product) {
         $ionicPlatform.ready(function () {
