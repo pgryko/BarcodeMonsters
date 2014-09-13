@@ -3,22 +3,5 @@
         <button ng-click="scanFood()">
             <img ng-src="{{state.img}}">
         </button>
-
-        <h1>{{barcode}}</h1>
-
-        <h1>Give me foooood!!!!</h1>
-
-        <form ng-submit="sendBarcode(barcode)" id="example-forms" class="ionic-body active-preview">
-            <div class="content has-header">
-                <div class="list">
-                    <label class="item item-input">
-                        <input ng-model="barcode" type="text" placeholder="Barcode">
-                    </label>
-                </div>
-                <div class="padding" style="height:10em">
-                    <button class="button button-positive">Submit</button>
-                </div>
-            </div>
-        </form>
     </ion-content>
 </ion-view>

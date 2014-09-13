@@ -18,32 +18,32 @@ angular.module('barcodeMonsters')
         }
     })
 
-    .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory', 'barcode',
-        function($scope, state, ProductsFactory, barcode) {
+    .controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode',
+        function($scope, state, Product, barcode) {
             var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
             var currentPos = 0;
             $scope.state = state.happy;
             $scope.barcode = 'UNKNOWN';
-            ProductsFactory.init()
-
-            $scope.sendBarcode = function(barcode) {
-                ProductsFactory.getProductData(barcode);
-            };
-
 
             $scope.scanFood = function() {
                 barcode.scan()
-                    .then(updateBarcode)
+                    .then(getProductData)
+                    .then(processMonsterState)
                     .then(changeMonsterState(), showError);
             };
 
         //Local functions
-        function updateBarcode(res){
-            $scope.barcode = res;
-            return res;
+        function getProductData(res){
+            return Product.get(res.text);
         }
 
-        function changeMonsterState() {
+        function processMonsterState(productData){
+            console.log('product data', productData);
+
+            return productData;
+        }
+
+        function changeMonsterState(product) {
             $scope.state = state[states[currentPos]];
             currentPos++;
 
