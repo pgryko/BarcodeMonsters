@@ -4,7 +4,7 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('ProductsFactory', function($q, $interval) {
+.factory('ProductsFactory', function($q, $interval, $http) {
     var urlRoot = 'https://secure.techfortesco.com/groceryapi/restservice.aspx?';
     var jcb = '&JSONP=JSON_CALLBACK';
     var promise = $q.defer();
@@ -12,15 +12,13 @@ angular.module('starter.services', [])
 
     function init() {
         getSessionkey();
-        stop = $interval(function() {
+        var intervalFunc = $interval(function() {
             getProductData(111111111111111111111111);
-        }, 100);
+        }, 10000);
     }
 
     function getSessionkey() {
-
         var sessionKey;
-
         promise = $q.defer();
         promise.resolve(sessionKey)
 
