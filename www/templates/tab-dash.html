@@ -1,11 +1,16 @@
 <ion-view title="Dashboard">
-  <ion-content class="padding">
-    <h1>Dash</h1>
+    <ion-content class="padding">
+        <h1>Dash</h1>
+        <div class="list card">
 
-      <button class="button" ng-click="scan()">
-          SCAN
-      </button>
-
-      {{barcode}}
-  </ion-content>
+            <div class="item item-avatar">
+                <img src="">
+                <p>Scan Barcode</p>
+            </div>
+            <button class="button center" ng-click="scan()">
+                SCAN
+            </button>
+        </div>
+        {{barcode}}
+    </ion-content>
 </ion-view>
