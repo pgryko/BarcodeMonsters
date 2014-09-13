@@ -1,3 +1,4 @@
+'use strict';
 angular.module('barcodeMonsters')
     .constant('state', {
         'normal': {
@@ -16,20 +17,28 @@ angular.module('barcodeMonsters')
             'img': 'img/Monster3/dead.png'
         }
     })
-    .controller('MonsterGameCtrl', ['$scope', 'state', function($scope, state){
-        var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
-        var currentPos = 0;
-        $scope.state = state.happy;
+    .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory',
+        function($scope, state, ProductsFactory) {
+            var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
+            var currentPos = 0;
+            $scope.state = state.happy;
 
+            ProductsFactory.init()
 
-        $scope.scanFood = function(){
-            $scope.state = state[states[currentPos]];
-            currentPos++;
-
-            if(currentPos === 5){
-                currentPos = 0;
+            $scope.sendBarcode = function(barcode) {
+                ProductsFactory.getProductData(barcode);
             }
-        };
-        console.log('MONSTER GAME');
 
-}]);
+
+            $scope.scanFood = function() {
+                $scope.state = state[states[currentPos]];
+                currentPos++;
+
+                if (currentPos === 5) {
+                    currentPos = 0;
+                }
+            };
+            console.log('MONSTER GAME');
+
+        }
+    ]);

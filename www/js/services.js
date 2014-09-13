@@ -4,15 +4,23 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('ProductsFactory', function($q, $http) {
+.factory('ProductsFactory', function($q, $interval) {
     var urlRoot = 'https://secure.techfortesco.com/groceryapi/restservice.aspx?';
     var jcb = '&JSONP=JSON_CALLBACK';
     var promise = $q.defer();
 
+    function init() {
+        getSessionkey();
+        stop = $interval(function() {
+            getProductData(111111111111111111111111);
+        }, 100);
+    }
+
     function getSessionkey() {
+
         var sessionKey;
 
-        promise = $q.defer()
+        promise = $q.defer();
         promise.resolve(sessionKey)
 
         if (typeof sessionKey === 'undefined') {
@@ -31,10 +39,10 @@ angular.module('starter.services', [])
             barcode = 1212;
         }
         getSessionkey().then(function(sessionKey) {
-            $http.jsonp(urlRoot + 'command=PRODUCTSEARCH&searchtext=' + barcode + jcb + '&sessionkey=' + sessionKey)
-            .then(function(a){
-              console.log(a);
-            });
+            $http.jsonp(urlRoot + 'command=PRODUCTSEARCH&EXTENDEDINFO=Y&searchtext=' + barcode + jcb + '&sessionkey=' + sessionKey)
+                .then(function(productData) {
+                    return productData.data.Products[0];
+                });
         });
     }
 
@@ -52,6 +60,7 @@ angular.module('starter.services', [])
         return promise.promise;
     }
     return {
-        getProductByBarcode: getProductByBarcode
+        getProductByBarcode: getProductByBarcode,
+        init: init
     }
 });
