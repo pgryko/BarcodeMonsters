@@ -23,7 +23,7 @@ angular.module('barcodeMonsters')
             var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
             var currentPos = 0;
             $scope.state = state.happy;
-            $scope.barcode = 'UNKNOWN';
+            $scope.msg = '';
 
             $scope.scanFood = function() {
                 barcode.scan()
@@ -39,7 +39,7 @@ angular.module('barcodeMonsters')
 
         function processMonsterState(productData){
             console.log('product data', productData);
-
+            $scope.msg = 'mmmm ' + productData.name;
             return productData;
         }
 
