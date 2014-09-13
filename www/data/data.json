@@ -6,29 +6,29 @@
             "calories": 1.6
         },
         {
-            "barcode": "54491494",
-            "name": "Diet Coke",
-            "calories": 1.6
+            "barcode": "54491472",
+            "name": "Coke",
+            "calories": 105
         },
         {
-            "barcode": "54491496",
-            "name": "Diet Coke",
-            "calories": 1.6
+            "barcode": "5010055100001",
+            "name": "Fosters",
+            "calories": 40
         },
         {
-            "barcode": "54491496",
-            "name": "Diet Coke",
-            "calories": 1.6
+            "barcode": "5449000052971",
+            "name": "Coke Life",
+            "calories": 68
         },
         {
-            "barcode": "54491496",
-            "name": "Diet Coke",
-            "calories": 1.6
+            "barcode": "5449000956552",
+            "name": "Relentless",
+            "calories": 220
         },
         {
-            "barcode": "54491496",
-            "name": "Diet Coke",
-            "calories": 1.6
+            "barcode": "5449000196798",
+            "name": "Vitamin Water Citrus-Guava",
+            "calories": 65
         }
     ]
 }
