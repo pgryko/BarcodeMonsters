@@ -1,14 +1,37 @@
 'use strict';
 angular.module('barcodeMonsterService', [])
+    .constant('state', {
+        'normal': {
+            'img': 'img/Monster3/normal.png'
+        },
+        'confused': {
+            'img': 'img/Monster3/confused.png'
+        },
+        'happy': {
+            'img': 'img/Monster3/happy.png'
+        },
+        'sad': {
+            'img': 'img/Monster3/sad.png'
+        },
+        'dead': {
+            'img': 'img/Monster3/dead.png'
+        }
+    })
 
 /**
  * A simple example service that returns some data.
  */
-.factory('getState', function() {
-    return function(cals) {
-        if (cals > 50) {
-            return 'sad';
+    .factory('getState', function (state) {
+        var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
+        var currentPos = 0;
+        return function (product) {
+            var st = state[states[currentPos]];
+            currentPos++;
+
+            if (currentPos === 5) {
+                currentPos = 0;
+            }
+
+            return st;
         }
-        return 'happy';
-    }
-});
+    });
