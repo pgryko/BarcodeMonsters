@@ -23,6 +23,7 @@ angular.module('barcodeMonsters')
             var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
             var currentPos = 0;
             $scope.state = state.happy;
+            $scope.barcode = 'UNKNOWN';
             ProductsFactory.init()
 
             $scope.sendBarcode = function(barcode) {
@@ -31,15 +32,16 @@ angular.module('barcodeMonsters')
 
 
             $scope.scanFood = function() {
-                $scope.state = state[states[currentPos]];
-                currentPos++;
-
-                if (currentPos === 5) {
-                    currentPos = 0;
-                }
+                barcode.scan()
+                    .then(updateBarcode)
+                    .then(changeMonsterState(), showError);
             };
 
         //Local functions
+        function updateBarcode(res){
+            $scope.barcode = res;
+            return res;
+        }
 
         function changeMonsterState() {
             $scope.state = state[states[currentPos]];

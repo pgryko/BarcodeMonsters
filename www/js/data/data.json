@@ -1,0 +1,37 @@
+[
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        calories: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    },
+    {
+        barcode: '54491496',
+        name: 'Diet Coke',
+        energy: 1.6
+    }
+]
