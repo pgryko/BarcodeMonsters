@@ -26,6 +26,7 @@ angular.module('barcodeMonsters')
             ProductsFactory.init()
 
             $scope.sendBarcode = function(barcode) {
+            	console.log(barcode)
                 ProductsFactory.getProductData(barcode);
             }
 
