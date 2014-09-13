@@ -1,3 +1,4 @@
+'use strict';
 angular.module('barcodeMonsters')
     .constant('state', {
         'normal': {
@@ -16,17 +17,27 @@ angular.module('barcodeMonsters')
             'img': 'img/Monster3/dead.png'
         }
     })
-    .controller('MonsterGameCtrl', ['$scope', 'state', 'barcode', function ($scope, state, barcode) {
-        var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
-        var currentPos = 0;
-        $scope.state = state.happy;
+
+    .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory', 'barcode',
+        function($scope, state, ProductsFactory, barcode) {
+            var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
+            var currentPos = 0;
+            $scope.state = state.happy;
+            ProductsFactory.init()
+
+            $scope.sendBarcode = function(barcode) {
+                ProductsFactory.getProductData(barcode);
+            };
 
 
-        $scope.scanFood = function () {
-            barcode.scan()
-                .then(changeMonsterState, showError)
-        };
-        console.log('MONSTER GAME');
+            $scope.scanFood = function() {
+                $scope.state = state[states[currentPos]];
+                currentPos++;
+
+                if (currentPos === 5) {
+                    currentPos = 0;
+                }
+            };
 
         //Local functions
 
@@ -44,4 +55,5 @@ angular.module('barcodeMonsters')
             console.log(Error);
         }
 
-    }]);
+        }
+    ]);

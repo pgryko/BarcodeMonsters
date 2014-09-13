@@ -1,9 +1,24 @@
 <ion-view title="Barcode Monsters">
-  <ion-content class="padding">
-      <button ng-click="scanFood()">
-          <img ng-src="{{state.img}}">
-      </button>
+    <ion-content class="padding">
+        <button ng-click="scanFood()">
+            <img ng-src="{{state.img}}">
+        </button>
 
-    <h1>Give me foooood!!!!</h1>
-  </ion-content>
+        <h1>Give me foooood!!!!</h1>
+        <form ng-submit="submit()"id="example-forms" class="ionic-body active-preview">
+            <div class="bar bar-header">
+                <div class="h1 title">Forms</div>
+            </div>
+            <div class="content has-header">
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Barcode">
+                    </label>
+                </div>
+                <div class="padding" style="height:10em">
+                    <button class="button button-positive">Submit</button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>
