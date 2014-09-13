@@ -15,9 +15,7 @@ angular.module('barcode', [])
                     );
                 } else {
                     deferred.resolve({
-                        barcode: '54491496',
-                        name: 'Diet Coke',
-                        energy: 1.6
+                        text: '54491496'
                     });
                 }
 

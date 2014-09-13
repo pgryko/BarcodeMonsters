@@ -17,7 +17,6 @@ angular.module('barcodeMonsters')
             'img': 'img/Monster3/dead.png'
         }
     })
-
     .controller('MonsterGameCtrl', ['$scope', 'state', 'ProductsFactory', 'barcode', 'getState',
         function($scope, state, ProductsFactory, barcode, getState) {
             var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
@@ -30,33 +29,42 @@ angular.module('barcodeMonsters')
             $scope.sendBarcode = function(barcode) {
                 ProductsFactory.getProductData(barcode);
             };
-
+            var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
+            var currentPos = 0;
+            $scope.state = state.happy;
+            $scope.msg = '';
 
             $scope.scanFood = function() {
                 barcode.scan()
-                    .then(updateBarcode)
+                    .then(getProductData)
+                    .then(processMonsterState)
                     .then(changeMonsterState(), showError);
             };
 
-        //Local functions
-        function updateBarcode(res){
-            $scope.barcode = res;
-            return res;
-        }
-
-        function changeMonsterState() {
-            $scope.state = state[states[currentPos]];
-            currentPos++;
-
-            if (currentPos === 5) {
-                currentPos = 0;
+            //Local functions
+            function getProductData(res) {
+                return Product.get(res.text);
             }
-        }
 
-        function showError(error){
-            $scope.state = state.confused;
-            console.log(Error);
-        }
+            function processMonsterState(productData) {
+                console.log('product data', productData);
+                $scope.msg = 'mmmm ' + productData.name;
+                return productData;
+            }
+
+            function changeMonsterState(product) {
+                $scope.state = state[states[currentPos]];
+                currentPos++;
+
+                if (currentPos === 5) {
+                    currentPos = 0;
+                }
+            }
+
+            function showError(error) {
+                $scope.state = state.confused;
+                console.log(Error);
+            }
 
         }
     ]);
