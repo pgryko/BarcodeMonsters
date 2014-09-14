@@ -39,6 +39,11 @@
             "barcode": "5060036011925",
             "name": "The Food Doctor - savoury seed",
             "calories": 572
+        },
+        {
+            "barcode": "5449000196798",
+            "name": "Vitamin Water - citrus-guava",
+            "calories": 68
         }
     ]
 }
