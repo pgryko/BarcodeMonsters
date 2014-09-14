@@ -1,7 +1,9 @@
 'use strict';
 angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode', 'getState', '$interval', 'productList',
     function ($scope, state, Product, barcode, getState, $interval, productList) {
-        $scope.state = state.normal;
+        console.log( calcAverageCalories() );
+
+        $scope.state = productList.get().length === 0 ? state.normal : getState({calories: calcAverageCalories()});
         $scope.barcode = 'UNKNOWN';
         updateMonsterSize();
         $scope.scanFood = function () {
