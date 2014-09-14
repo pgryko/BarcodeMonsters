@@ -18,24 +18,19 @@ angular.module('barcodeMonsterService', [])
             'msg': "I don't like it"
         },
         'dead': {
-            'img': 'img/Monster3/dead.png',
-            'msg': "Dead"
+            'img': 'img/Monster3/dead.png'
         },
         'eating0': {
-            'img': 'img/Monster3/eating/eating0.png',
-            'msg': "."
+            'img': 'img/Monster3/eating/eating0.png'
         },
         'eating1': {
-            'img': 'img/Monster3/eating/eating1.png',
-            'msg': ".."
+            'img': 'img/Monster3/eating/eating1.png'
         },
         'eating2': {
-            'img': 'img/Monster3/eating/eating2.png',
-            'msg': "..."
+            'img': 'img/Monster3/eating/eating2.png'
         },
         'eating3': {
-            'img': 'img/Monster3/eating/eating3.png',
-            'msg': "..."
+            'img': 'img/Monster3/eating/eating3.png'
         }
     })
 
