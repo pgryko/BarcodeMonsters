@@ -1,9 +1,9 @@
 <ion-view title="Barcode Monsters">
-    <ion-content class="padding">
-        <button ng-click="scanFood()">
-            <img class="monster-face" ng-src="{{state.img}}">
-        </button>
+    <ion-content class="padding monster-game">
+            <img class="monster-face" ng-src="{{state.img}}" ng-click="scanFood()">
 
-        <h3>{{msg}}</h3>
+        <div class="monster-msg">
+            <span>{{state.msg}}</span>
+        </div>
     </ion-content>
 </ion-view>
