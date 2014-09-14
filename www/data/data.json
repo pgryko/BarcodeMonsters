@@ -2,33 +2,43 @@
     "data": [
         {
             "barcode": "54491496",
-            "name": "Diet Coke",
+            "name": "Diet Coke 500ml",
             "calories": 1.6
         },
         {
             "barcode": "54491472",
-            "name": "Coke",
+            "name": "Coke 500ml",
             "calories": 105
         },
         {
             "barcode": "5010055100001",
-            "name": "Fosters",
+            "name": "Fosters 440ml",
             "calories": 40
         },
         {
             "barcode": "5449000052971",
-            "name": "Coke Life",
+            "name": "Coke Life 400ml",
             "calories": 68
         },
         {
             "barcode": "5449000956552",
-            "name": "Relentless",
+            "name": "Relentless 500ml",
             "calories": 220
         },
         {
-            "barcode": "5449000196798",
-            "name": "Vitamin Water Citrus-Guava",
-            "calories": 65
+            "barcode": "5023765013141",
+            "name": "Abbey Well Still 500ml",
+            "calories": 0
+        },
+        {
+            "barcode": "5060021080219",
+            "name": "The Food Doctor - pinapple & banana",
+            "calories": 107
+        },
+        {
+            "barcode": "5060036011925",
+            "name": "The Food Doctor - savoury seed",
+            "calories": 572
         }
     ]
 }
