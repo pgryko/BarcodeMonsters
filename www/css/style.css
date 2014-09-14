@@ -48,6 +48,7 @@ ion-content.basket h2 {
     font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 ion-content.basket ul {
