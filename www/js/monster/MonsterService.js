@@ -3,7 +3,7 @@ angular.module('barcodeMonsterService', [])
     .constant('state', {
         'normal': {
             'img': 'img/Monster1/normal.png',
-            'msg': "Hello"
+            'msg': "Hello! Press me to scan"
         },
         'confused': {
             'img': 'img/Monster1/confused.png',
