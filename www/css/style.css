@@ -57,9 +57,22 @@ ion-content.basket ul {
     padding: 0;
 }
 
+ion-content.basket li.red {
+    background-color: #ef4e3a;
+}
+
+ion-content.basket li.orange {
+    background-color: coral;
+}
+
+ion-content.basket li.green {
+    background-color: greenyellow;
+}
+
 ion-content.basket li {
+    padding: 0 0 0 10px ;
     font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 3px solid #fff;
 }
 
 ion-content.basket li:last-child {

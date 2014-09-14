@@ -6,4 +6,15 @@ angular.module('barcodeMonsters')
             productList.remove(product);
         };
 
+        $scope.getProductColor = function(product){
+            if(product.calories < 30){
+                return 'green';
+            }
+
+            if(product.calories < 65){
+                return 'orange';
+            }
+
+            return 'red';
+        };
     }]);
