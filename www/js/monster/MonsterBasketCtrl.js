@@ -11,7 +11,7 @@ angular.module('barcodeMonsters')
                 return 'green';
             }
 
-            if(product.calories < 65){
+            if(product.calories < 70){
                 return 'orange';
             }
 
