@@ -6,6 +6,7 @@ ion-content.monster-game {
 
 
 img.monster-face {
+    margin-top: 15px;
     width: 100%;
 }
 
@@ -31,6 +32,7 @@ div.monster-msg {
 div.monster-msg span {
     display:table-cell;
     vertical-align:middle;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
