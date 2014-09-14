@@ -3,7 +3,7 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
     function ($scope, state, Product, barcode, getState, $interval, productList) {
         $scope.state = state.happy;
         $scope.barcode = 'UNKNOWN';
-
+        updateMonsterSize();
         $scope.scanFood = function () {
             barcode.scan()
                 .then(showMonsterEating)
@@ -27,7 +27,9 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
         }
 
         function addProductToList(product){
-            productList.add(product);
+            if(product){
+                productList.add(product);
+            }
             return product;
         }
 
