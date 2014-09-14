@@ -17,6 +17,10 @@ angular.module('barcodeMonsterService', [])
             'img': 'img/Monster3/sad.png',
             'msg': "I don't like it"
         },
+        'superSad': {
+            'img': 'img/Monster3/super-sad.png',
+            'msg': "I hate this"
+        },
         'dead': {
             'img': 'img/Monster3/dead.png',
             'msg': "Dead"
@@ -43,22 +47,17 @@ angular.module('barcodeMonsterService', [])
  * A simple example service that returns some data.
  */
     .factory('getState', function (state) {
-        var states = ['normal', 'happy', 'normal', 'sad', 'confused', 'dead'];
-        var currentPos = 0;
         return function (product) {
-            var st;
+            var calories = product.calories;
 
-            if (!product) {
-                return state.confused;
+            if(calories < 30){
+                return state.happy;
             }
 
-            st = state[states[currentPos]];
-            currentPos++;
-
-            if (currentPos === 5) {
-                currentPos = 0;
+            if(calories < 70){
+                return state.sad;
             }
 
-            return st;
+            return state.superSad;
         }
     });
