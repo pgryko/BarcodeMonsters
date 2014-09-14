@@ -1,7 +1,24 @@
 <ion-view title="Barcode Monsters">
-  <ion-content class="padding">
-    <h1>Register your monster</h1>
+    <ion-content class="padding basket">
+        <div>
+            <h2>Basket</h2>
+            <button class="del-btn" ng-click="remove()">
+                TEST
+            </button>
+            <ul>
+                <li ng-repeat="product in products">
+                    <div class="text">
+                        <span>{{product.name}}</span>
+                    </div>
+                    <div class="btn">
+                        <button class="del-btn" ng-click="remove(product)">
+                            <i class="ion-android-close"></i>
+                        </button>
 
-      {{msg}}
-  </ion-content>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </ion-content>
 </ion-view>

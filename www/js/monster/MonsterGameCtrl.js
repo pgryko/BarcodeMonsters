@@ -1,6 +1,6 @@
 'use strict';
-angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode', 'getState', '$interval',
-    function ($scope, state, Product, barcode, getState, $interval) {
+angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode', 'getState', '$interval', 'productList',
+    function ($scope, state, Product, barcode, getState, $interval, productList) {
         $scope.state = state.happy;
         $scope.barcode = 'UNKNOWN';
 
@@ -8,6 +8,7 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
             barcode.scan()
                 .then(showMonsterEating)
                 .then(getProductData)
+                .then(addProductToList)
                 .then(processMonsterState, showError);
         };
 
@@ -22,6 +23,11 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
             }, 200, 8).then(function () {
                 return res;
             });
+        }
+
+        function addProductToList(product){
+            productList.add(product);
+            return product;
         }
 
         function getProductData(res) {

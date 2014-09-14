@@ -36,3 +36,57 @@ div.monster-msg span {
     font-weight: bold;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
+
+
+/*   BASKET LIST STYLES */
+
+ion-content.basket div {
+    width: 100%;
+}
+
+ion-content.basket h2 {
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ion-content.basket ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+ion-content.basket li {
+    font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+ion-content.basket li:last-child {
+    border: none;
+}
+
+ion-content.basket li * {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+ion-content.basket li a.del-btn {
+    float: right;
+    height: 31px;
+}
+
+ion-content.basket li div.text {
+    width: 80%;
+}
+
+ion-content.basket li div.btn {
+    width: 10%;
+}
