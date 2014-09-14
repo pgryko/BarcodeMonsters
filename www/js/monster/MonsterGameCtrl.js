@@ -9,7 +9,8 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
                 .then(showMonsterEating)
                 .then(getProductData)
                 .then(addProductToList)
-                .then(processMonsterState, showError);
+                .then(processMonsterState)
+                .then(updateMonsterSize, showError);
         };
 
         //Local functions
@@ -41,6 +42,10 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
         function showError(error) {
             $scope.state = state.confused;
             console.log(Error);
+        }
+
+        function updateMonsterSize(){
+            
         }
     }
 ]);
