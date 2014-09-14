@@ -3,8 +3,7 @@ angular.module('barcodeMonsters')
         $scope.products = productList.get();
 
         $scope.remove =  function(product){
-            console.log('removint ', product);
-//            productList.remove(product);
+            productList.remove(product);
         };
 
-}]);
+    }]);

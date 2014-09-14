@@ -41,7 +41,7 @@ div.monster-msg span {
 /*   BASKET LIST STYLES */
 
 ion-content.basket div {
-    width: 100%;
+    width: auto;
 }
 
 ion-content.basket h2 {
