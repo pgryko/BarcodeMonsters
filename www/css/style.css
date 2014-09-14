@@ -4,9 +4,17 @@ ion-content.monster-game {
     height: 100%;
 }
 
+div.monster-face-div {
+    height: 60%;
+    margin-top: 15px;
+    display: table-cell;
+    vertical-align: middle
+}
 
 img.monster-face {
-    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 img.monster-face.BIG {
@@ -19,6 +27,10 @@ img.monster-face.MEDIUM {
 
 img.monster-face.SMALL {
     width: 20%;
+}
+
+div.monster-msg-div {
+    height: 30%;
 }
 
 div.monster-msg {
