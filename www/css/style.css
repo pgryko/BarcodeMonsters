@@ -5,9 +5,9 @@ ion-content.monster-game {
 }
 
 div.monster-face-div {
-    height: 60%;
+    height: 50%;
     margin-top: 15px;
-    display: table-cell;
+    display: table;
     vertical-align: middle
 }
 
