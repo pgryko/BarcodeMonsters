@@ -33,12 +33,12 @@ angular.module('barcodeMonsters', ['ionic', 'barcode', 'starter.services', 'barc
                 templateUrl: "templates/monster/monster.html"
             })
 
-            .state('monster.register', {
-                url: "/register",
+            .state('monster.basket', {
+                url: "/basket",
                 views: {
-                    'monster-register' : {
-                        templateUrl: 'templates/monster/register-monster.html',
-                        controller: 'RegisterMonsterCtrl'
+                    'monster-basket' : {
+                        templateUrl: 'templates/monster/monster-basket.html',
+                        controller: 'MonsterBasketCtrl'
                     }
                 }
             })
