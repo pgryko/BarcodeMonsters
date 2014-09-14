@@ -45,7 +45,30 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
         }
 
         function updateMonsterSize(){
-            
+            var avgCals = calcAverageCalories();
+            $scope.monsterSize = getSizeClass(avgCals);
+        }
+
+        function calcAverageCalories(){
+            var cals = 0;
+            var products = productList.get();
+            angular.forEach(products, function(p){
+                cals += p.calories;
+            });
+
+            return cals / products.length;
+        }
+
+        function getSizeClass(avgCals){
+            if(avgCals < 30){
+                return 'BIG';
+            }
+
+            if(avgCals < 70){
+                return 'MEDIUM';
+            }
+
+            return 'SMALL';
         }
     }
 ]);

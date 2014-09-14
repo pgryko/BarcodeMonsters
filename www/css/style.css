@@ -7,7 +7,18 @@ ion-content.monster-game {
 
 img.monster-face {
     margin-top: 15px;
-    width: 100%;
+}
+
+img.monster-face.BIG {
+    width: 90%;
+}
+
+img.monster-face.MEDIUM {
+    width: 50%;
+}
+
+img.monster-face.SMALL {
+    width: 20%;
 }
 
 div.monster-msg {

@@ -1,6 +1,6 @@
 <ion-view title="Barcode Monsters">
     <ion-content class="padding monster-game" scroll="false">
-            <img class="monster-face" ng-src="{{state.img}}" ng-click="scanFood()">
+            <img class="monster-face" ng-src="{{state.img}}" ng-click="scanFood()" ng-class="monsterSize">
 
         <div class="monster-msg">
             <span>{{state.msg}}</span>
