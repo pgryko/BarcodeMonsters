@@ -14,9 +14,21 @@ angular.module('barcode', [])
                         }
                     );
                 } else {
-                    deferred.resolve({
-                        text: '54491496'
-                    });
+                    var x = Math.random();
+
+                    if (x<0.333) {
+                        deferred.resolve({
+                            text: '54491496'
+                        });
+                    } else if (x < 0.666) {
+                        deferred.resolve({
+                            text: '54491472'
+                        });
+                    } else {
+                        deferred.resolve({
+                        text: '5449000052971'
+                        });
+                    }
                 }
 
 
