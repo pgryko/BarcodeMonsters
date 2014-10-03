@@ -2,21 +2,18 @@
     font-family: WILD2;
     src: url(../fonts/Wil2ghbi.ttf);
 }
-
 ion-content.monster-game {
     background-color: #ffffff;
     width: 100%;
     height: 100%;
 }
-
 div.monster-face-div {
     height: 50%;
     width: 100%;
     position: relative;
 }
-
 img.monster-face {
-    display:block;
+    display: block;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -24,25 +21,19 @@ img.monster-face {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     margin-right: -50%;
-
 }
-
 img.monster-face.BIG {
     width: 60%;
 }
-
 img.monster-face.MEDIUM {
     width: 40%;
 }
-
 img.monster-face.SMALL {
     width: 20%;
 }
-
 div.monster-msg-div {
     height: 30%;
 }
-
 div.monster-msg {
     -webkit-border-radius: 3px;
     -webkit-border-top-right-radius: 3px;
@@ -50,7 +41,6 @@ div.monster-msg {
     -moz-border-radius-topright: 3px;
     border-radius: 3px;
     border-top-right-radius: 3px;
-
     width: 95%;
     height: 100px;
     margin-top: 20px;
@@ -59,81 +49,99 @@ div.monster-msg {
     background-color: #ECECEC;
     padding: 10px;
     vertical-align: middle;
-    text-align: center;display:table;
+    text-align: center;
+    display: table;
 }
-
 div.monster-msg span {
-    display:table-cell;
-    vertical-align:middle;
+    display: table-cell;
+    vertical-align: middle;
     font-size: 30px;
     font-weight: bold;
     font-family: WILD2, "Comic Sans MS", "Comic Sans", cursive;
 }
-
-
 /*   BASKET LIST STYLES */
 
 ion-content.basket div {
     width: auto;
 }
-
 ion-content.basket h2 {
     font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-
 ion-content.basket ul {
     list-style-type: none;
     margin: 0;
     margin-top: 20px;
     padding: 0;
 }
-
 ion-content.basket li.red {
     background-color: #ef4e3a;
 }
-
 ion-content.basket li.orange {
     background-color: coral;
 }
-
 ion-content.basket li.green {
     background-color: greenyellow;
 }
-
 ion-content.basket li {
-    padding: 0 0 0 10px ;
+    padding: 0 0 0 10px;
     font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
     border-bottom: 3px solid #fff;
 }
-
 ion-content.basket li:last-child {
     border: none;
 }
-
 ion-content.basket li * {
     text-decoration: none;
     color: #000;
     display: inline-block;
-
     -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
     -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
     -o-transition: font-size 0.3s ease, background-color 0.3s ease;
     -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
     transition: font-size 0.3s ease, background-color 0.3s ease;
 }
-
 ion-content.basket li a.del-btn {
     float: right;
     height: 31px;
 }
-
 ion-content.basket li div.text {
     width: 80%;
 }
-
 ion-content.basket li div.btn {
     width: 10%;
 }
+.button-yellow {
+    color: #FFFF00;
+}
+.yellow {
+    background-color: yellow;
+}
+.positive {
+    background-color: blue;
+}
+.balanced {
+    background-color: green;
+}
+.energized {
+    background-color: orange;
+}
+.assertive {
+    background-color: red;
+}
+.button.button-container {
+    padding: 0 ;
+}
+.strip {
+    height: 5em;
+    float: left;
+    width: 20%;
+    padding-left: 5px
+    padding-right: 5px
+    display: block;
+    border-radius: 0;
+}
+/*background-color: blue;*/
+

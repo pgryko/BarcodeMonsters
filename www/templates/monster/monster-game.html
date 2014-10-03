@@ -8,5 +8,22 @@
                 <span>{{state.msg}}</span>
             </div>
         </div>
+        <ng-include src="monster-bar.html" scope="$scope" onload=""></ng-include>
+
+        <div class="button-bar">
+            <div class="button button-container">
+                <div class="positive strip"></div>
+                <div class="balanced strip"></div>
+                <div class="energized strip"></div>
+                <div class="assertive strip"></div>
+                <div class="yellow strip"></div>
+
+            </div>
+            <a class="button-positive button"></a>
+            <a class="button-balanced button"></a>
+            <a class="button-energized button"></a>
+            <a class="button-assertive button"></a>
+            <a class="button yellow"></a>
+        </div>
     </ion-content>
 </ion-view>
