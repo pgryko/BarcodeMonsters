@@ -1,6 +1,6 @@
 'use strict';
-angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode', 'getState', '$interval', 'productList',
-    function ($scope, state, Product, barcode, getState, $interval, productList) {
+angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'state', 'Product', 'barcode', 'getState', '$interval', 'productList', 'audioService',
+    function ($scope, state, Product, barcode, getState, $interval, productList, audioService) {
         console.log( calcAverageCalories() );
 
         $scope.state = productList.get().length === 0 ? state.normal : getState({calories: calcAverageCalories()});
@@ -8,7 +8,9 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
         updateMonsterSize();
         $scope.scanFood = function () {
             barcode.scan()
+                .then(playEatingSound)
                 .then(showMonsterEating)
+                .then(stopEatingSound)
                 .then(getProductData)
                 .then(addProductToList)
                 .then(processMonsterState)
@@ -16,9 +18,19 @@ angular.module('barcodeMonsters').controller('MonsterGameCtrl', ['$scope', 'stat
         };
 
         //Local functions
+        function playEatingSound(res){
+
+            audioService.startSound();
+            return res;
+        }
+        function stopEatingSound(res){
+            audioService.stopSound();
+            return res;
+        }
         function showMonsterEating(res) {
             var EATING_STATES = 4;
             var count = 0;
+
             return $interval(function () {
                 var stateNum = count % EATING_STATES;
                 $scope.state = state['eating' + stateNum];
