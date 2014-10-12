@@ -61,10 +61,12 @@ angular.module('barcodeMonsterService', [])
     };
 })
 
-.factory('audioService', function() {
+.factory('audioService', ['$ionicPlatform', function($ionicPlatform) {
     var audio;
     if (window.cordova) {
-        audio = new Media('/audio/eating_an_apple_loudly.mp3');
+        $ionicPlatform.ready(function() { // wait till plugin loaded
+            audio = new Media('/android_asset/www/audio/eating_an_apple_loudly.mp3'); //annoying cordova path modification
+        });
     } else {
         audio = new Audio('/audio/eating_an_apple_loudly.mp3');
     }
@@ -78,4 +80,4 @@ angular.module('barcodeMonsterService', [])
         }
     };
     return obj;
-});
+}]);
